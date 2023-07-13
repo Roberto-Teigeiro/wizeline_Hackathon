@@ -1,0 +1,32 @@
+
+
+.image-container {
+    text-align: center;
+  }
+
+  .navbar{
+    float: left;
+      display: block;
+      color: #333;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+  }
+  .navbar a {
+    float: left;
+    display: block;
+    color: #333;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+
+  .navbar a.right {
+    float: right;
+  }
+
+  .navbar a:hover {
+    background-color: #ddd;
+  }
