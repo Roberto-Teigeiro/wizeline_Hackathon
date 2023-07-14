@@ -2,7 +2,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Title</title>
+    <title>Home</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -18,8 +18,13 @@
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     
     <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
- 
-    <script defer src="scripts/scripts.js"></script>
+    <script src="{{ url_for('static', filename='Scripts/script.js') }}"></script>
+
+    <script>
+        function redirigir() {
+            window.location.href = "{{ url_for('form') }}";
+        }
+    </script>
 
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script defer ="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
@@ -65,32 +70,32 @@
         <div class="social-box">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-4 col-xs-12 text-center">
+                    <div class="col-lg-12 col-xs-12 text-center" style="margin: 7px;">
                            
                             <div class="fancy" href="#" onclick="alert('¡Hola, mundo!')" style="border: 3px solid black;">
                                 <span class="top-key"></span>
-                                <span class="text">Plan completo <br>-----------------------------------------------Si necesitas una organización completa para tus comidas y las tareas dentro del hogar esta es tu opcion, obteniendo.<br> <br> <br></span>
+                                <span class="text" style="font-family: 'Times New Roman', Times, serif;">Plan completo <br>----------------------------------------------- <br> Si necesitas una organización completa para tus comidas y las tareas dentro del hogar esta es tu opcion, obteniendo.<br>  <br></span>
                                 <span class="bottom-key-1"></span>
                                 <span class="bottom-key-2"></span>
                             </div>
                         </div>
                     
 
-                        <div class="col-lg-4 col-xs-12 text-center">
+                        <div class="col-lg-12 col-xs-12 text-center" style="margin: 7px;" >
                            
                             <div class="fancy" href="#" onclick="alert('¡Hola, mundo!')" style="border: 3px solid black;">
                                 <span class="top-key"></span>
-                                <span class="text">Plan de comida <br>-----------------------------------------------Este plan se limita unicamente a hacerte un listado de las comidas para cada dia de la semana, junto con una lista para surtir tu cocina.  <br><br> </span>
+                                <span class="text" style="font-family: 'Times New Roman', Times, serif;">Plan de comida <br>----------------------------------------------- <br> Este plan se limita unicamente a hacerte un listado de las comidas para cada dia de la semana, junto con una lista para surtir tu cocina.  <br><br> </span>
                                 <span class="bottom-key-1"></span>
                                 <span class="bottom-key-2"></span>
                             </div>
                         </div>
                     
-                        <div class="col-lg-4 col-xs-12 text-center">
+                        <div class="col-lg-12 col-xs-12 text-center" style="margin: 7px;">
                            
                             <div class="fancy" href="#" onclick="alert('¡Hola, mundo!')" style="border: 3px solid black;">
                                 <span class="top-key"></span>
-                                <span class="text">Plan de tareas <br>-----------------------------------------------El plan perfecto para dividir y organizar las tareas dentro de tu casa, ayudandote a tener una justa y equitativa carga de trabajo para cada uno de los miembros.</span>
+                                <span class="text" style="font-family: 'Times New Roman', Times, serif;">Plan de tareas <br>----------------------------------------------- <br> El plan perfecto para dividir y organizar las tareas dentro de tu casa, ayudandote a tener una justa y equitativa carga de trabajo para cada uno de los miembros.</span>
                                 <span class="bottom-key-1"></span>
                                 <span class="bottom-key-2"></span>
                             </div>
@@ -104,10 +109,10 @@
     <br>
     <br>
 
-    <div class="btn-conteiner">
+    <div class="btn-conteiner" onclick="redirigir()">
         <div class="align-right col-lg-1.5" >
-        <a class="btn-content" href="#">
-          <span class="btn-title">NEXT</span>
+        <a class="btn-content">
+          <span class="btn-title" >NEXT</span>
           <span class="icon-arrow">
             <svg width="66px" height="43px" viewBox="0 0 66 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
               <g id="arrow" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
