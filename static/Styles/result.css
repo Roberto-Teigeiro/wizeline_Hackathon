@@ -97,7 +97,7 @@
   }
   
   .send-input::placeholder {
-    color: #828E9E;
+    color: black;
   }
   
   .input-place {
@@ -111,7 +111,7 @@
     height: 40px;
     width: 280px;
     gap: 5px;
-    border: 1px solid #2E2F3A;
+    border: 1px solid black;
   }
   
   .send {
@@ -128,3 +128,85 @@
     width: 17px;
   }
 
+
+
+
+  .buttonDownload {
+    display:flex;
+    position:absolute;
+    padding: 5px 60px;
+    align-items: center;
+    background-color: #4CC713;
+    color: white;
+    font-family: sans-serif;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 20px;
+    text-align:center;
+    text-indent: 15px;
+    border: none;
+   }
+   
+   .buttonDownload:hover {
+    background-color: #45a21a;
+    color: white;
+    size: 12px;
+   }
+   
+   .buttonDownload:before, .buttonDownload:after {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 15px;
+    top: 60%;
+   }
+   
+   .buttonDownload:before {
+    width: 10px;
+    height: 2px;
+    border-style: solid;
+    border-width: 0 2px 2px;
+   }
+   
+   .buttonDownload:after {
+    width: 0;
+    height: 0;
+    margin-left: 3px;
+    margin-top: -7px;
+    border-style: solid;
+    border-width: 4px 4px 0 4px;
+    border-color: transparent;
+    border-top-color: inherit;
+    animation: downloadArrow 1s linear infinite;
+    animation-play-state: paused;
+   }
+   
+   .buttonDownload:hover:before {
+    border-color: #cdefbd;
+   }
+   
+   .buttonDownload:hover:after {
+    border-top-color: #cdefbd;
+    animation-play-state: running;
+   }
+   
+   @keyframes downloadArrow {
+    0% {
+     margin-top: -7px;
+     opacity: 1;
+    }
+   
+    0.001% {
+     margin-top: -15px;
+     opacity: 0.4;
+    }
+   
+    50% {
+     opacity: 1;
+    }
+   
+    100% {
+     margin-top: 0;
+     opacity: 0.4;
+    }
+   }
