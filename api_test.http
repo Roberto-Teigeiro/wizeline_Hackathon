@@ -5,10 +5,24 @@ POST http://localhost:5000/form HTTP/1.1
 content-Type: application/json
 
     {
-        "email":"algo@gmail",
+        "deberes":"Barrer, trapear, lavar ropa, limpiar el baño, limpiar los muebles, limpiar la cocina y lavar los trastes",
         "numBaños":"2",
         "numHabitaciones":"3",
-        "alimentos":"fewfewvevx",
-        "deberes":"fewfewvevx",
-        "preferencias":"fewwwfccscs"
+        "numPersonas":"2",
+        "personas":[
+            {
+                "nombre":"jose",
+                "desayuno":"chilaquiles, molletes",
+                "comida":"hamburguesa, pizza",
+                "cena":"tacos, tortas",
+                "preferencias": "barrer"
+            },
+            {
+                "nombre":"alda",
+                "desayuno":"chilaquiles, molletes",
+                "comida":"hamburguesa, pizza",
+                "cena":"tacos, tortas",
+                "preferencias": "trapear"
+            }
+        ]
     }

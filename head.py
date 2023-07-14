@@ -1,10 +1,12 @@
 import requests
 
-def openai(personas,habitaciones,bano,):
+from ics import Calendar
+
+def openai(personas,habitaciones,bano,deberes):
     comidas = []
     for i in range(len(personas)):
         comidas.append(f"""
-        {personas[i]}:
+        {personas[i]["nombre"]}:
         desayuno: {personas[i]["desayuno"]}
         Comida: {personas[i]["comida"]}
         Cena: {personas[i]["cena"]} 
@@ -12,14 +14,14 @@ def openai(personas,habitaciones,bano,):
     comidas_str = "\n".join(comidas)
     favoritos=[]
     for i in range(len(personas)):
-        favoritos.append(f"{personas[i]}: {personas[i]['favorito']}")
+        favoritos.append(f"{personas[i]}: {personas[i]['preferencias']}")
     fav_str = "\n".join(favoritos)
 
     url = "https://api.openai.com/v1/chat/completions"
 
     headers = {
         "Content-Type": "application/json",
-        "Authorization": "Bearer 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"
+        "Authorization": "Bearer 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"
     }
     data = {
         "model": "gpt-3.5-turbo-16k",
@@ -52,7 +54,7 @@ def openai(personas,habitaciones,bano,):
     {comidas_str}
     Estas personas suelen comprar comida cada 2 semanas, también, estas personas prefieren no tener deberes de casa los viernes y los sábados.
     Los deberes que se necesitan hacer en esta casa son los siguientes:
-    Barrer, trapear, lavar ropa, limpiar el baño, limpiar los muebles, limpiar la cocina y lavar los trastes.
+    {deberes}.
     Estos miembros prefieren hacer cierto deber en especifico:
     {fav_str}
     """}
@@ -63,7 +65,40 @@ def openai(personas,habitaciones,bano,):
     response = requests.post(url, headers=headers, json=data)
     response_body = response.json()["choices"][0]["message"]["content"]
     response_body = response_body.replace("VTODO", "VEVENT")
-    print(response_body)
+    return(response_body)
 
 
-openai([1],1,1)
+respuesta = {
+    "deberes": "Barrer, trapear, lavar ropa, limpiar el baño, limpiar los muebles, limpiar la cocina y lavar los trastes",
+    "numBaños": "2",
+    "numHabitaciones": "3",
+    "numPersonas": "2",
+    "personas": [
+        {
+            "nombre": "jose",
+            "desayuno": "chilaquiles, molletes",
+            "comida": "hamburguesa, pizza",
+            "cena": "tacos, tortas",
+            "preferencias": "barrer"
+        },
+        {
+            "nombre": "alda",
+            "desayuno": "chilaquiles, molletes",
+            "comida": "hamburguesa, pizza",
+            "cena": "tacos, tortas",
+            "preferencias": "trapear"
+        }
+    ]
+}
+
+
+
+
+
+string=openai(respuesta["personas"],respuesta["numHabitaciones"],respuesta["numBaños"],respuesta["deberes"])
+
+
+
+with open('calendar.ics', 'w') as f:
+    f.write(str(string))
+    f.close()

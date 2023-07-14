@@ -7,9 +7,14 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+		<link rel="stylesheet" href="{{url_for('static', filename='Styles/form.css')}}" />
 		<link rel="stylesheet" href="../static/Styles/form.css" />
 
+		<script src="{{url_for('static', filename='Scripts/script.js')}}"></script>
 		<script src="../static/Scripts/script.js"></script>
+		<script>
+			var resultUrl = "{{ url_for('result') }}";
+		</script>
 	</head>
 	<body style="background-color: #ead7d7">
 		<!-- Optional JavaScript -->
@@ -44,58 +49,58 @@
 			<div class="form-container">
 				<form class="form" action="javascript:sendForm()">
 					<div class="form-group">
-						<label for="textarea"><h3 style="font-family: 'Times New Roman', Times, serif; color: black">Deberes de la casa que se necesitan hacer</h3></label>
-						<textarea name="textarea" id="deberes" rows="10" cols="50" required="" placeholder="Barrer, Trapear, Lavar carro"></textarea>
+						<label ><h3 style="font-family: 'Times New Roman', Times, serif; color: black">Deberes de la casa que se necesitan hacer</h3></label>
+						<input id="deberes" rows="10" cols="50" required placeholder="Barrer, Trapear, Lavar carro"/>
 					</div>
 					<div class="form-group">
 						<label for="email"><h3 style="font-family: 'Times New Roman', Times, serif; color: black">Habitaciones</h3></label>
-						<input type="number" id="numPersonas" name="email" required="" />
+						<input type="number" id="numHabitaciones" required/>
 					</div>
 					<div class="form-group">
 						<label for="numBaños"><h3 style="font-family: 'Times New Roman', Times, serif; color: black">Numero de baños</h3></label>
-						<input type="number" id="numBaños" name="email" required="" />
+						<input type="number" id="numBaños" required/>
 					</div>
 					<div class="form-group">
-						<label for="email"><h3 style="font-family: 'Times New Roman', Times, serif; color: black">Numero de habitantes</h3></label>
-						<input type="number" id="numHabitaciones" name="email" required="" onchange="nombres()" />
+						<label for="email"><h3 style="font-family: 'Times New Roman', Times, serif; color: black">Numero de Habitantes</h3></label>
+						<input type="number" id="numPersonas" required onchange="nombres()" />
 					</div>
 
 					<div id="padreNombre">
-						<div class="form-group" id="nombre">
+						<div class="form-group" id="nombre" style="display: none">
 							<label for="text"><h3 style="font-family: 'Times New Roman', Times, serif; color: black">Nombre</h3></label>
-							<input type="text" name="text" id="alimentos" rows="10" cols="50" required="" placeholder="nom" />
+							<input type="text" placeholder="Nombre" />
 						</div>
 					</div>
 
 					<div id="padreDesayuno">
-						<div class="form-group" id="desayuno">
-							<label for="textarea"><h3 style="font-family: 'Times New Roman', Times, serif; color: black">Desayuno</h3></label>
-							<textarea name="textarea" id="alimentos" rows="10" cols="50" required="" placeholder="Chilaquiles, Flautas, Birria"></textarea>
+						<div class="form-group" id="desayuno" style="display: none">
+							<label ><h3 style="font-family: 'Times New Roman', Times, serif; color: black">Desayuno</h3></label>
+							<input placeholder="Chilaquiles, Flautas, Birria"/>
 						</div>
 					</div>
 
 					<div id="padreComida">
-						<div class="form-group" id="comida">
-							<label for="textarea"><h3 style="font-family: 'Times New Roman', Times, serif; color: black">Comida</h3></label>
-							<textarea name="textarea" id="alimentos" rows="10" cols="50" required="" placeholder="Chilaquiles, Flautas, Birria"></textarea>
+						<div class="form-group" id="comida" style="display: none">
+							<label ><h3 style="font-family: 'Times New Roman', Times, serif; color: black">Comida</h3></label>
+							<input placeholder="Chilaquiles, Flautas, Birria"/>
 						</div>
 					</div>
 
 					<div id="padreCena">
-						<div class="form-group" id="Cena">
-							<label for="textarea"><h3 style="font-family: 'Times New Roman', Times, serif; color: black">Cena</h3></label>
-							<textarea name="textarea" id="alimentos" rows="10" cols="50" required="" placeholder="Chilaquiles, Flautas, Birria"></textarea>
+						<div class="form-group" id="cena" style="display: none">
+							<label ><h3 style="font-family: 'Times New Roman', Times, serif; color: black">Cena</h3></label>
+							<input placeholder="Chilaquiles, Flautas, Birria"/>
 						</div>
 					</div>
 
-					<div id="padrePreferencias">
-						<div class="form-group" id="preferencias">
-							<label for="textarea"><h3 style="font-family: 'Times New Roman', Times, serif; color: black">Preferencias de los inquilinos</h3></label>
-							<textarea name="textarea" id="preferencias" rows="10" cols="50" required="" placeholder="Barrer, Trapear, Lavar carro"></textarea>
+					<div id="padrePreferencias" >
+						<div class="form-group" id="preferencias" style="display: none">
+							<label ><h3 style="font-family: 'Times New Roman', Times, serif; color: black">Preferencias de los inquilinos</h3></label>
+							<input placeholder="Barrer, Trapear, Lavar carro"/>
 						</div>
 					</div>
 
-					<button class="form-submit-btn" type="submit"><h3 style="font-family: 'Times New Roman', Times, serif; color: black">Submit</h3></button>
+					<button class="form-submit-btn" type="submit" disabled id="submit"><h3 style="font-family: 'Times New Roman', Times, serif; color: black">Submit</h3></button>
 				</form>
 			</div>
 		</div>
