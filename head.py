@@ -63,8 +63,9 @@ def openai(personas,habitaciones,bano,deberes):
     }
 
     response = requests.post(url, headers=headers, json=data)
-    response_body = response.json()["choices"][0]["message"]["content"]
-    response_body = response_body.replace("VTODO", "VEVENT")
+    # response_body = response.json()["choices"][0]["message"]["content"]
+    # response_body = response_body.replace("VTODO", "VEVENT")
+    print(response)
     return(response_body)
 
 

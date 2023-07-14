@@ -75,9 +75,12 @@ async function sendForm(){
     try{
         let response=await makeRequest("POST", "/form",headers,body);
         debugger
-        window.location.href = resultUrl;
         console.log(response);
-        document.getElementById("resultado").innerHTML=response;
+        
+        let div=document.getElementById("divResultado");
+        div.innerHTML=response;
+        div.style.display="block";
+        document.getElementById("divForm").style.display="none";
 
         
 

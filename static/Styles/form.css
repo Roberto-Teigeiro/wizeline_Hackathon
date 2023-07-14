@@ -108,3 +108,11 @@
   
   
   
+  .container {
+    width: 300px;
+    height: 320px;
+    background-color: #d4cbcb;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+  }
