@@ -1,0 +1,25 @@
+Desde que entramos a la universidad, no hemos dejado de escuchar experiencias sobre nuestros amigos, especialmente foráneos o que se han independizado recientemente. 
+Los problemas entre compañeros de cuarto son inevitables y el principal causante de estos es la falta de organización, siempre es complicado tener un acuerdo sobre las tareas
+ y muchas veces estos desacuerdos terminan escalando a niveles que se vuelven incontrolables y suelen terminar en la separación de los roomies. 
+Trabajamos para crear una solución a este problema. La falta y/o mala organización.
+
+Esta herramienta funciona a partir de gpt 3.5, una IA generativa, en donde esta se encargará de recibir información por parte de 1 o varios usuarios sobre el tipo de vivienda, 
+así mismo como sus preferencias de tareas dentro de esta, numero de inquilinos dentro de la casa, gustos para cada comida del día, entre otras cosas. 
+Posterior a esto, la información recibida se recopila y ajusta para crear un prompt el cual recibe gpt 3.5, para después ofrecer al usuario una organización no solo detallada y completa
+ de las tareas del hogar, si no que se encarga de generar todo un plan alimenticio para cada día de la semana, esto basándose en los gustos recopilados de cada miembro anteriormente, esto es acompañado
+de una lista en la cuál se prioriza poder cumplir las comidas señaladas.
+
+Tenemos un modelo de negocio en el cuál se da una prueba o beta de la herramienta gratuita, la cuál incluirá una corrida de nuestro aplicación web para poder generar un plan para el usuario.
+ Esto con 2 posibles correcciones para este plan.
+
+Nuestro enfoque inicial surgió a partir de la problemática que era presente ante nosotros, pero durante el desarrollo  nos percatamos del potencial que esta herramienta presenta en otras áreas de trabajo.
+por eso es que hemos pensado en dos posibles expansiones o caminos por los cuales se podría encaminar nuestro proyecto. 
+
+Nuestras ramas tienen como foco principal las empresas como Walmart. Siendo este nuestro cliente, al cuál podemos venderle una herramienta que asignara tareas y deberes dentro de la empresa a todos los empleados, generando
+ un plan de trabajo eficiente, con el que se podrán tener mejores resultados y procesos con una mejora notable del rendimiento.
+
+Nuestra segunda tiene la mira puesto sobre el mismo objetivo, pero dirigido hacia los clientes de las empresas, podemos hacer que Walmart por así decirlo, ofrezca una herramienta a su
+ clientes para crear una lista de super mercado que se genere de forma automática, basada en un plan alimenticio o preferencias. 
+Estas dos ideas tienen como modelo de negocio ofrecer esta solución a este tipo de prospectos.
+
+
