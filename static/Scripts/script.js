@@ -71,3 +71,4 @@ function setRespose(response){
     padre.appendChild(div);
 }
 
+function nombres(){}

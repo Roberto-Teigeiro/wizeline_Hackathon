@@ -10,8 +10,8 @@ def index():
     print(json.loads(json_data))
 
     data = {
-    "name": "John",
-    "age": 30,
+    "desa": "John",
+    "comida": 30,
     "city": "New York"
     }
     print(json.dumps(data))
@@ -22,7 +22,8 @@ def index():
 def form():
     print(request)
     if request.method == 'POST':
-        print(json.loads(request.data))
+        respuesta=json.loads(request.data)
+        print(respuesta["numHabitaciones"])
         return json.dumps({"text":"GOOD"})
     
 
