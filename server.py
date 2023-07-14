@@ -1,7 +1,8 @@
 from flask import Flask, render_template, url_for, request, json
+from flask_cors import CORS
 
 app = Flask(__name__)
-app
+CORS(app)
 
 @app.route('/')
 def index():
@@ -16,6 +17,14 @@ def index():
     print(json.dumps(data))
 
     return render_template('home.html')
+
+@app.route('/form',methods=['POST'])
+def form():
+    print(request)
+    if request.method == 'POST':
+        print(json.loads(request.data))
+        return json.dumps({"text":"GOOD"})
+    
 
 if __name__=='__main__':
     app.run(debug=True)

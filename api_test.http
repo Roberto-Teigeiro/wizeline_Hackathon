@@ -1,1 +1,14 @@
 GET http://localhost:5000
+
+###
+POST http://localhost:5000/form HTTP/1.1
+content-Type: application/json
+
+    {
+        "email":"algo@gmail",
+        "numBaños":"2",
+        "numHabitaciones":"3",
+        "alimentos":"fewfewvevx",
+        "deberes":"fewfewvevx",
+        "preferencias":"fewwwfccscs"
+    }
