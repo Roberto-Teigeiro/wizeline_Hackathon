@@ -23,7 +23,7 @@ def openai(personas,habitaciones,bano,deberes):
 
     headers = {
         "Content-Type": "application/json",
-        "Authorization": "Bearer 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"
+        "Authorization": "Bearer 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"
     }
     data = {
         "model": "gpt-3.5-turbo-16k",
@@ -89,18 +89,12 @@ def form():
         print(respuesta)
         string=(openai(respuesta["personas"],respuesta["numHabitaciones"],respuesta["numBaños"],respuesta["deberes"]))
 
-        with open('calendar.ics', 'w') as f:
-            f.write(str(string))
-            f.close()
-
-        current_dir = os.path.dirname(os.path.abspath(__file__))
-
-        # Genera la ruta relativa al archivo calendar.ics
-        file_path = os.path.join(current_dir, 'calendar.ics')
-        print(file_path)
+        
 
         # Envía el archivo como respuesta
-        return send_file(file_path, as_attachment=True)
+        return json.dumps({"text":string})
+    
+
     else:
         return render_template('form.html')
 

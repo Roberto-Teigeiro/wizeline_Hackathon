@@ -74,11 +74,10 @@ async function sendForm(){
     let headers=[{name:"Content-Type",value:"application/json"}];
     try{
         let response=await makeRequest("POST", "/form",headers,body);
-        debugger
         console.log(response);
         
         let div=document.getElementById("divResultado");
-        div.innerHTML=response;
+        div.innerHTML=response.text;
         div.style.display="block";
         document.getElementById("divForm").style.display="none";
 
