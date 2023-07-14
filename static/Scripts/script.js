@@ -1,7 +1,10 @@
+const Url = "http://localhost:5000";
 
 function makeRequest(method, url, headers = undefined, body = undefined) {
+    
 	return new Promise(function (resolve, reject) {
 		let xhr = new XMLHttpRequest();
+        console.log(method);
 		xhr.open(method, Url + url);
 		if (headers != undefined) {
 			headers.forEach((item) => {
@@ -32,6 +35,7 @@ function makeRequest(method, url, headers = undefined, body = undefined) {
 }
 
 async function sendForm(){
+    debugger
     let email= document.getElementById("email").value;
     let numBaños= document.getElementById("numBaños").value;
     let numHabitaciones= document.getElementById("numHabitaciones").value;
@@ -50,9 +54,10 @@ async function sendForm(){
 
     let headers=[{name:"Content-Type",value:"application/json"}];
     try{
-        let response=await makeRequest("POST","/api/submit",headers,body);
+        let response=await makeRequest("POST", "/form",headers,body);
         setRespose(JSON.parse(response));
     }catch(e){
+        console.log(e);
         alert(e.status + ": " + e.response);
     }
 }
