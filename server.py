@@ -86,9 +86,8 @@ def form():
     print(request)
     if request.method == 'POST':
         respuesta=json.loads(request.data)
-        print(respuesta)
         string=(openai(respuesta["personas"],respuesta["numHabitaciones"],respuesta["numBaños"],respuesta["deberes"]))
-
+        print(string)
         
 
         # Envía el archivo como respuesta
