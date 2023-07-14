@@ -5,14 +5,14 @@ def openai(personas,habitaciones,bano,):
     for i in range(len(personas)):
         comidas.append(f"""
         {personas[i]}:
-        desayuno: {personas[i][0]}
-        Comida: {personas[i][1]}
-        Cena: {personas[i][2]} 
+        desayuno: {personas[i]["desayuno"]}
+        Comida: {personas[i]["comida"]}
+        Cena: {personas[i]["cena"]} 
     """)
     comidas_str = "\n".join(comidas)
     favoritos=[]
     for i in range(len(personas)):
-        favoritos.append(f"{personas[i]}: {personas[i][3]}")
+        favoritos.append(f"{personas[i]}: {personas[i]['favorito']}")
     fav_str = "\n".join(favoritos)
 
     url = "https://api.openai.com/v1/chat/completions"
@@ -64,3 +64,6 @@ def openai(personas,habitaciones,bano,):
     response_body = response.json()["choices"][0]["message"]["content"]
     response_body = response_body.replace("VTODO", "VEVENT")
     print(response_body)
+
+
+openai([1],1,1)

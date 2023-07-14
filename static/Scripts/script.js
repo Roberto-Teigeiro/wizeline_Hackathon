@@ -36,7 +36,7 @@ function makeRequest(method, url, headers = undefined, body = undefined) {
 
 async function sendForm(){
     debugger
-    let email= document.getElementById("email").value;
+    let numPersonas= document.getElementById("numPersonas").value;
     let numBaños= document.getElementById("numBaños").value;
     let numHabitaciones= document.getElementById("numHabitaciones").value;
     let alimentos= document.getElementById("alimentos").value;
@@ -71,3 +71,4 @@ function setRespose(response){
     padre.appendChild(div);
 }
 
+function nombres(){}
